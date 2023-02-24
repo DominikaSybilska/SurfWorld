@@ -1,5 +1,5 @@
 # SurfWorld
-html/css/js project for University classess
+html/css/js project for University course
 
 <h3>Surfing Website Project</h3>
 This project is a simple website about surfing, built with HTML, CSS, and JS. It shows how the blog with your surfing adventures could looks like.
