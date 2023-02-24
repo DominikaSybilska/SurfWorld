@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statystyki</title>
+
+    <!-- import styli css-->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- import ikonek-->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <!-- import czcionki-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- import ikonek-->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css">
+    <script>
+        // Stworzenie zmiennych do przechowywania statystyk
+        var pageViews = 0;
+        var uniqueVisitors = 0;
+        var bounceRate = 0;
+        var avgSessionDuration = 0;
+
+        // Funkcja zwiększania liczby odsłon
+        function trackPageView() {
+            pageViews++;
+            updateStats();
+        }
+
+        // Funkcja zwiększania liczby unikalnych odwiedzających
+        function trackUniqueVisitor() {
+            if (!localStorage.getItem("visitorId")) {
+                localStorage.setItem("visitorId", Date.now());
+                uniqueVisitors++;
+            }
+            updateStats();
+        }
+
+        // Funkcja do obliczenia i aktualizacji Bounce Rate i średniego czasu sesji 
+        function trackSession() {
+            var startTime = Date.now();
+            var endTime = localStorage.getItem("endTime") || startTime;
+            var totalDuration = endTime - startTime;
+            var sessions = localStorage.getItem("sessions") || 1;
+
+            avgSessionDuration = (totalDuration / sessions).toFixed(2);
+            bounceRate = ((sessions - 1) / sessions * 100).toFixed(2);
+
+            localStorage.setItem("endTime", Date.now());
+            localStorage.setItem("sessions", sessions + 1);
+
+            updateStats();
+        }
+
+        // Funkcja do aktualizacji statystyk na stronie
+        function updateStats() {
+            document.getElementById("pageViews").innerHTML = pageViews;
+            document.getElementById("uniqueVisitors").innerHTML = uniqueVisitors;
+            document.getElementById("bounceRate").innerHTML = bounceRate + "%";
+            document.getElementById("avgSessionDuration").innerHTML = avgSessionDuration + " seconds";
+        }
+    </script>
+
+</head>
+
+<body onload="trackSession()">
+    <header>
+        <a href="" class="logo">SurfWorld</a>
+        <div id="menu-icon"><i class='bx bx-menu'></i></div>
+
+        <ul class="navbar">
+            <li><a href="../html/index.html#home">Strona główna</a></li>
+            <li><a href="../html/index.html#trips">Nasze wyjazdy</a></li>
+            <li><a href="../html/index.html#hours">Godziny otwarcia</a></li>
+            <li><a href="..html/index.html#contact">Kontakt</a></li>
+            <li><a href="..html/info-page.html">Strona informacyjna</a></li>
+            <li><a href="../backend/login-page.html" class="login"><i class="ti ti-login"></i> <span>Wyloguj</span></a>
+            </li>
+        </ul>
+    </header>
+    <div class="wrapper">
+        <div class="sidebar">
+            <nav class="nav-sidebar">
+                <div class="nav-items">
+                    <a href="../backend/index.html#posts"><i class="ti ti-chevron-right"></i> Lista postów</a>
+                    <a href="../backend/users-page.html"><i class="ti ti-chevron-right"></i> Lista użytkowników</a>
+                    <a href="../backend/edit-profile.html"><i class="ti ti-chevron-right"></i> Edycja profilu</a>
+                    <a href="../backend/stats.html"><i class="ti ti-chevron-right"></i> Statystyki</a>
+                </div>
+            </nav>
+        </div>
+        <main>
+            <h1>Statystyki strony</h1>
+            <ul>
+                <li>Liczba odsłon: <span id="pageViews"></span></li>
+                <li>Liczba unikanlnych odwiedzających: <span id="uniqueVisitors"></span></li>
+                <li>Bounce rate (Reprezentuje odsetek odwiedzających, którzy wchodzą do witryny, a następnie ją
+                    opuszczają, zamiast kontynuować przeglądanie innych stron w tej samej witrynie.): <span
+                        id="bounceRate"></span></li>
+                <li>Średni czas trwania sesji: <span id="avgSessionDuration"></span></li>
+            </ul>
+
+            <script>
+                trackPageView();
+                trackUniqueVisitor();
+            </script>
+        </main>
+    </div>
+</body>
+
+</html>

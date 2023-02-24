@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edycja profilu</title>
+
+    <!-- import styli css-->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- import ikonek-->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <!-- import czcionki-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- import ikonek-->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css">
+</head>
+
+<body>
+    <header>
+        <a href="" class="logo">SurfWorld</a>
+        <div id="menu-icon"><i class='bx bx-menu'></i></div>
+
+        <ul class="navbar">
+            <li><a href="../html/index.html#home">Strona główna</a></li>
+            <li><a href="../html/index.html#trips">Nasze wyjazdy</a></li>
+            <li><a href="../html/index.html#hours">Godziny otwarcia</a></li>
+            <li><a href="../html/index.html#contact">Kontakt</a></li>
+            <li><a href="../html/info-page.html">Strona informacyjna</a></li>
+            <li><a href="../backend/login-page.html" class="login"><i class="ti ti-login"></i> <span>Wyloguj</span></a>
+            </li>
+        </ul>
+    </header>
+    <div class="wrapper">
+        <div class="sidebar">
+            <nav class="nav-sidebar">
+                <div class="nav-items">
+                    <a href="../backend/index.html#posts"><i class="ti ti-chevron-right"></i> Lista postów</a>
+                    <a href="../backend/users-page.html"><i class="ti ti-chevron-right"></i> Lista użytkowników</a>
+                    <a href="../backend/edit-profile.html"><i class="ti ti-chevron-right"></i> Edycja profilu</a>
+                    <a href="../backend/stats.html"><i class="ti ti-chevron-right"></i> Statystyki</a>
+                </div>
+            </nav>
+        </div>
+        <main>
+            <h1>Profil</h1>
+            <div class="wrapper">
+                <div class="row">
+                    <div class="profile-photo">
+                        <img src="../img/user-33638_640.png" alt="Jan Kowalski">
+                    </div>
+                    <div class="profile-info">
+                        <h2>Jan Kowalski</h2>
+                        <p><i class="ti ti-mail"></i> surffan12@wp.pl</p>
+                        <p><i class="ti ti-phone"></i> 123 456 789</p>
+                        <p><i class='bx bx-notepad'></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
+                            illo nobis excepturi vero iste qui exercitationem modi sint! Fugit, sapiente!</p>
+                        <a href="#" class="btn btn-edit">Edytuj</a>
+                        <a href="#" class="btn btn-delete">Hasło</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+
+
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

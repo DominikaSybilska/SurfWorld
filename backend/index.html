@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zarządzanie stroną</title>
+
+    <!-- import styli css-->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- import ikonek-->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <!-- import czcionki-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- import ikonek-->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css">
+
+</head>
+
+<body>
+    <header>
+        <a href="" class="logo">SurfWorld</a>
+        <div id="menu-icon"><i class='bx bx-menu'></i></div>
+
+        <ul class="navbar">
+            <li><a href="../html/index.html#home">Strona główna</a></li>
+            <li><a href="../html/index.html#trips">Nasze wyjazdy</a></li>
+            <li><a href="../html/index.html#hours">Godziny otwarcia</a></li>
+            <li><a href="../html/index.html#contact">Kontakt</a></li>
+            <li><a href="../html/info-page.html">Strona informacyjna</a></li>
+            <li><a href="../backend/login-page.html" class="login"><i class="ti ti-login"></i> <span>Wyloguj</span></a>
+            </li>
+        </ul>
+    </header>
+    <div class="wrapper">
+        <div class="sidebar">
+            <nav class="nav-sidebar">
+                <div class="nav-items">
+                    <a href="../backend/index.html#posts"><i class="ti ti-chevron-right"></i> Lista postów</a>
+                    <a href="../backend/users-page.html"><i class="ti ti-chevron-right"></i> Lista użytkowników</a>
+                    <a href="../backend/edit-profile.html"><i class="ti ti-chevron-right"></i> Edycja profilu</a>
+                    <a href="../backend/stats.html"><i class="ti ti-chevron-right"></i> Statystyki</a>
+                </div>
+            </nav>
+        </div>
+        <main id="posts">
+            <h1>Lista postów</h1>
+            <div class="wrapper">
+                <div class="row">
+                    <table class="posts">
+                        <tr>
+                            <th>Ogłoszenia</th>
+                            <th>Data utworzenia</th>
+                            <th>Autor</th>
+                        </tr>
+                        <tr>
+                            <td>Najnowsze wiadomości<br>
+                                <small>[ <a href="#">Edit</a> | <a href="#">Delete</a> ]</small></td>
+                            <td>2023-01-14</td>
+                            <td>Jan Kowalski</td>
+                        </tr>
+                        <tr>
+                            <td>Najnowsze wiadomości 2<br>
+                                <small>[ <a href="#">Edit</a> | <a href="#">Delete</a> ]</small></td>
+                            <td>2023-01-11</td>
+                            <td>Anna Nowak</td>
+                        </tr>
+                        <tr>
+                            <td>Starsze wiadomości<br>
+                                <small>[ <a href="#">Edit</a> | <a href="#">Delete</a> ]</small></td>
+                            <td>2022-12-17</td>
+                            <td>Jan Kowalski</td>
+                        </tr>
+                        <tr>
+                            <td>I jeszcze starsze wiadomości<br>
+                                <small>[ <a href="#">Edit</a> | <a href="#">Delete</a> ]</small></td>
+                            <td>2021-11-20</td>
+                            <td>Anna Nowak</td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
